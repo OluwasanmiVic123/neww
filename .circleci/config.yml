@@ -243,7 +243,7 @@ workflows:
        - terraform-initial
        - terraform-planning:
            requires: ["terraform-initial"]
-       - hold-apply:
+       - hold-applying:
            type: approval
            requires: ["terraform-planning"]
        - terraform-applying:
