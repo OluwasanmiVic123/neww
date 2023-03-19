@@ -218,27 +218,27 @@ jobs:
             
 workflows:
   version: 2
-  laravel-deployment:
+  blog-app_web-deployment:
     jobs:
-       - terraform-initialize
-       - terraform-planning:
-           requires: ["terraform-initialize"]
-       - hold-apply:
-           type: approval
-           requires: ["terraform-plan"]
-       - terraform-apply:
-           requires: ["hold-apply"]
-       - terraform-plan-destroy:
-           requires: ["terraform-appy"]
+       #- terraform-initialize
+       #- terraform-planning:
+        #   requires: ["terraform-initialize"]
+       #- hold-apply:
+        #   type: approval
+         #  requires: ["terraform-plan"]
+       #- terraform-apply:
+        #   requires: ["hold-apply"]
+       - terraform-destroy:
+           #requires: ["terraform-appy"]
        - hold-destroy:
            type: approval
-           requires: ["terraform-plan-destroy"]
-       - terraform-destroy:
+           requires: ["terraform-destroy"]
+       - terraform-stop:
            requires: ["hold-destroy"]  
-       - build-blog-app:
-            requires: ["terraform-applying"]
-       - deploy-blog-app:
-           requires: ["terraform-applying, build-django-app"]
-       - deploy-sock-shop:
-           requires: ["terraform-applying, build-django-app"]
+     #  - build-blog-app:
+      #      requires: ["terraform-applying"]
+       #- deploy-blog-app:
+        #   requires: ["terraform-applying, build-django-app"]
+       #- deploy-sock-shop:
+        #   requires: ["terraform-applying, build-django-app"]
      
