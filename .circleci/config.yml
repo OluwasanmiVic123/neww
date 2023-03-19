@@ -156,7 +156,7 @@ jobs:
           name: Build Docker image
           command: |
             cd django_project  
-            docker build -t django_project-app .
+            docker build -t blog-app-app .
       - run:
           name: Push to Docker Hub
           command: |
