@@ -238,7 +238,7 @@ jobs:
             
 workflows:
   version: 2
-  blogapp-deployment:
+  blog-app_web-deployment:
     jobs:
 #       - terraform-init
 #       - terraform-plan:
