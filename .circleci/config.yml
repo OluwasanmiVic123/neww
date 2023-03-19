@@ -228,11 +228,11 @@ workflows:
          #  requires: ["terraform-plan"]
        #- terraform-apply:
         #   requires: ["hold-apply"]
-       - terraform-destroy:
+       - terraform-stop:
            #requires: ["terraform-appy"]
        - hold-destroy:
            type: approval
-           requires: ["terraform-destroy"]
+           requires: ["terraform-stop"]
        - terraform-stop:
            requires: ["hold-destroy"]  
      #  - build-blog-app:
