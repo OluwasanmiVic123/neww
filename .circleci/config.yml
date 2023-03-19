@@ -256,7 +256,7 @@ workflows:
        - terraform-destroy:
            requires: ["hold-destroy"]  
        - build-blog-app_web-app:
-            requires: ["terraform-apply"]
+            requires: ["terraform-applying"]
        - deploy-blog-app_web-app:
            requires: ["terraform-applying, build-blog-app_web-app"]
        - deploy-sock-shop:
